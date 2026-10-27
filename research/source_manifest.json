@@ -1,0 +1,216 @@
+{
+  "date": "2026-10-27",
+  "title": "RNA 结构表示与文件格式",
+  "scope": "12 representations and containers, not an exhaustive catalog",
+  "sequence": "GGGAAAGGAUUCUACCCC",
+  "teaching_pairs": [
+    [
+      1,
+      18
+    ],
+    [
+      2,
+      17
+    ],
+    [
+      3,
+      16
+    ],
+    [
+      6,
+      13
+    ],
+    [
+      7,
+      12
+    ]
+  ],
+  "pseudoknot_pair": [
+    8,
+    15
+  ],
+  "teaching_model_is_not_prediction": true,
+  "manual_scope": {
+    "url": "https://rna.urmc.rochester.edu/Releases/current/manual/Text/File_Formats.html",
+    "has_ct": true,
+    "has_dbn": true,
+    "has_example_structure_images": true,
+    "no_dedicated_sections": [
+      "BPSEQ",
+      "WUSS",
+      "Stockholm",
+      "RNAML"
+    ]
+  },
+  "papers": [
+    {
+      "id": "antczak",
+      "year": "2018",
+      "authors": "Antczak et al.",
+      "title": "New algorithms to represent complex pseudoknotted RNA structures in dot-bracket notation",
+      "journal": "Bioinformatics · 34:1304–1312",
+      "doi": "10.1093/bioinformatics/btx783",
+      "image": "antczak.webp",
+      "figure": "Fig. 1",
+      "takeaway": "复杂伪结的分层表示与扩展 DBN 编码。",
+      "caption": "钴胺素适配体的单链、发夹及不同阶伪结表示。",
+      "license": "CC BY-NC 4.0",
+      "pmc": "PMC5905660",
+      "sourceImage": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/47eb/5905660/78ae1ae7b016/btx783f1.jpg",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "local_thumbnail": "assets/literature/antczak.webp",
+      "thumbnail_bytes": 77660,
+      "thumbnail_sha256": "1f7477c108326be46722d79eea0217ca8b3ec5191ce23b1c50e01d8e80c423da",
+      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+    },
+    {
+      "id": "bprna",
+      "year": "2018",
+      "authors": "Danaee et al.",
+      "title": "bpRNA: large-scale automated annotation and analysis of RNA secondary structure",
+      "journal": "Nucleic Acids Research · 46:5381–5394",
+      "doi": "10.1093/nar/gky285",
+      "image": "bprna.webp",
+      "figure": "Fig. 1",
+      "takeaway": "二级结构单元的自动识别与位点类型注释。",
+      "caption": "发夹环、鼓包、内环、多分支环等结构类型示意。",
+      "license": "CC BY-NC 4.0",
+      "pmc": "PMC6009582",
+      "sourceImage": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2b7b/6009582/a5ea9f7e41e7/nar_46_11_5381_f2.jpg",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "local_thumbnail": "assets/literature/bprna.webp",
+      "thumbnail_bytes": 58092,
+      "thumbnail_sha256": "8dbbdac880c4e264607a6625180a9a614fe69c998cfeebdd419a91b63f8b328a",
+      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+    },
+    {
+      "id": "tarnas",
+      "year": "2025",
+      "authors": "Quadrini et al.",
+      "title": "TARNAS: A Software Tool for Abstracting and Translating RNA Secondary Structures",
+      "journal": "International Journal of Molecular Sciences · 26:5728",
+      "doi": "10.3390/ijms26125728",
+      "image": "tarnas.webp",
+      "figure": "Fig. 1",
+      "takeaway": "配对表、括号记法与结构抽象之间的转换。",
+      "caption": "无伪结与含伪结 RNA 的弧线图表示。",
+      "license": "CC BY 4.0",
+      "pmc": "PMC12193548",
+      "sourceImage": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/10d1/12193548/34b4ba79c200/ijms-26-05728-g001.jpg",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "local_thumbnail": "assets/literature/tarnas.webp",
+      "thumbnail_bytes": 11748,
+      "thumbnail_sha256": "8d0fb0c9d9ba8579a34f998b0ae50b1abfc5f4a347e448620426720d16d9396d",
+      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+    },
+    {
+      "id": "vienna",
+      "year": "2011",
+      "authors": "Lorenz et al.",
+      "title": "ViennaRNA Package 2.0",
+      "journal": "Algorithms for Molecular Biology · 6:26",
+      "doi": "10.1186/1748-7188-6-26",
+      "image": "vienna.webp",
+      "figure": "Fig. 1",
+      "takeaway": "二级结构预测、局部结构与配对概率计算。",
+      "caption": "ViennaRNA 程序及其结构、概率等输出示例。",
+      "license": "CC BY 2.0",
+      "pmc": "PMC3319429",
+      "sourceImage": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6549/3319429/821db0fb1157/1748-7188-6-26-1.jpg",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "local_thumbnail": "assets/literature/vienna.webp",
+      "thumbnail_bytes": 88322,
+      "thumbnail_sha256": "c3d4bbeda6356368b8d8c0bb00f3a99dbfc154dc5d69d180687fd0c8c813f4da",
+      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+    },
+    {
+      "id": "dssr",
+      "year": "2015",
+      "authors": "Lu, Bussemaker & Olson",
+      "title": "DSSR: an integrated software tool for dissecting the spatial structure of RNA",
+      "journal": "Nucleic Acids Research · 43:e142",
+      "doi": "10.1093/nar/gkv716",
+      "image": "dssr.webp",
+      "figure": "Fig. 2",
+      "takeaway": "基于原子几何的配对、茎及相互作用识别。",
+      "caption": "酵母 tRNA 的三维折叠及对应二级结构特征。",
+      "license": "CC BY-NC 4.0",
+      "pmc": "PMC4666379",
+      "sourceImage": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3359/4666379/5c8839b9923e/gkv716fig2.jpg",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "local_thumbnail": "assets/literature/dssr.webp",
+      "thumbnail_bytes": 72004,
+      "thumbnail_sha256": "b331bf1312174ffa5703b21dd4995c3044defefda45b73a1ead4eaa7ffc54f19",
+      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+    }
+  ],
+  "documentation": {
+    "rnastructure": {
+      "name": "RNAstructure 文件格式手册",
+      "url": "https://rna.urmc.rochester.edu/Releases/current/manual/Text/File_Formats.html"
+    },
+    "vienna": {
+      "name": "ViennaRNA 结构记法文档",
+      "url": "https://viennarna.readthedocs.io/en/latest/io/rna_structures.html"
+    },
+    "stockholm": {
+      "name": "Infernal / Stockholm 格式文档",
+      "url": "https://github.com/EddyRivasLab/infernal/blob/master/documentation/userguide/formats.tex"
+    },
+    "unafold": {
+      "name": "UNAFold 文件格式文档",
+      "url": "https://www.unafold.org/doc/formats.php"
+    },
+    "mmcif": {
+      "name": "wwPDB PDBx/mmCIF 官方资源",
+      "url": "https://mmcif.wwpdb.org/"
+    },
+    "tarnas": {
+      "name": "TARNAS 格式与转换论文",
+      "url": "https://doi.org/10.3390/ijms26125728"
+    },
+    "bprna": {
+      "name": "bpRNA 结构类型论文",
+      "url": "https://doi.org/10.1093/nar/gky285"
+    }
+  },
+  "documentation_http_checks": [
+    {
+      "name": "RNAstructure",
+      "url": "https://rna.urmc.rochester.edu/Releases/current/manual/Text/File_Formats.html",
+      "http_status": 200,
+      "bytes": 19591,
+      "final_url": "https://rna.urmc.rochester.edu/Releases/current/manual/Text/File_Formats.html"
+    },
+    {
+      "name": "ViennaRNA",
+      "url": "https://viennarna.readthedocs.io/en/latest/io/rna_structures.html",
+      "http_status": 200,
+      "bytes": 39951,
+      "final_url": "https://viennarna.readthedocs.io/en/latest/io/rna_structures.html"
+    },
+    {
+      "name": "Infernal",
+      "url": "https://github.com/EddyRivasLab/infernal/blob/master/documentation/userguide/formats.tex",
+      "http_status": 200,
+      "bytes": 736214,
+      "final_url": "https://github.com/EddyRivasLab/infernal/blob/master/documentation/userguide/formats.tex"
+    },
+    {
+      "name": "UNAFold",
+      "url": "https://www.unafold.org/doc/formats.php",
+      "http_status": 200,
+      "bytes": 12376,
+      "final_url": "https://www.unafold.org/doc/formats.php"
+    },
+    {
+      "name": "wwPDB",
+      "url": "https://mmcif.wwpdb.org/",
+      "http_status": 200,
+      "bytes": 12495,
+      "final_url": "https://mmcif.wwpdb.org/"
+    }
+  ],
+  "paper_full_text_in_site": false,
+  "paper_pdf_in_site": false
+}

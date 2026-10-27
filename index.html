@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="RNA 结构表示与文件格式参考：定义、字段示例、研究应用及格式转换中的信息保留。">
+  <meta name="theme-color" content="#f7f7f2">
+  <title>RNA 结构表示与文件格式</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#explorer">跳至格式与示例</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="RNA 结构格式参考首页">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 25V16a12 12 0 0 1 24 0v9M11 25V16a5 5 0 0 1 10 0v9"/><path d="M4 20h7m10 0h7"/><circle cx="4" cy="26" r="2"/><circle cx="28" cy="26" r="2"/></svg>
+      <span>RNA<span class="brand-divider">/</span>结构格式参考</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="#explorer">格式与示例</a>
+      <a href="#research">研究应用</a>
+      <a href="#references">参考文献 <span>↗</span></a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero page-width" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">RNA 结构表示<br>与文件格式</h1>
+      </div>
+      <div class="hero-art" aria-label="同一配对关系在括号记法、弧线和伙伴表中的示意">
+        <svg id="hero-svg" viewBox="0 0 620 235" role="img" aria-label="一个 RNA 示例的弧线图"></svg>
+        <div class="hero-format-strip"><span class="mini-label">DBN</span><code>(((..((....))..)))</code><span class="art-arrow">↔</span><span class="mini-label">BPSEQ</span><code>1&nbsp; G&nbsp; 18</code></div>
+      </div>
+    </section>
+    <section id="explorer" class="page-width explorer-section" aria-labelledby="explorer-title">
+      <div class="section-heading compact-heading">
+        <h2 id="explorer-title" class="visually-hidden">格式与示例</h2>
+        <div class="view-switch" role="group" aria-label="格式视图">
+          <button type="button" id="explore-view-btn" class="selected" aria-pressed="true">格式示例</button>
+          <button type="button" id="compare-view-btn" aria-pressed="false">信息表达能力</button>
+        </div>
+      </div>
+      <div class="workbench">
+        <aside class="format-sidebar" aria-label="格式选择">
+          <label class="search-box"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8" cy="8" r="5"/><path d="m12 12 4 4"/></svg><input id="format-search" type="search" placeholder="搜索格式" aria-label="搜索格式"></label>
+          <div id="format-list"></div>
+        </aside>
+        <div id="format-detail" class="format-detail">
+          <div class="detail-header">
+            <div class="detail-title-block"><div class="format-kicker"><span id="format-kind"></span><span id="format-extension"></span></div><h3 id="format-title"></h3><p id="format-full"></p></div>
+            <span class="format-index" id="format-index">01</span>
+          </div>
+          <div class="example-toolbar">
+            <div class="model-toggle" role="group" aria-label="选择示例结构">
+              <button type="button" data-model="nested" class="selected" aria-pressed="true">无伪结</button>
+              <button type="button" data-model="pseudoknot" aria-pressed="false">含伪结</button>
+            </div>
+            <span class="example-note">18 nt 构造示例</span>
+          </div>
+          <div class="example-grid">
+            <div class="visual-panel">
+              <div class="visual-tabs" role="group" aria-label="结构图形">
+                <button type="button" class="selected" data-visual="structure" aria-pressed="true">二维图</button>
+                <button type="button" data-visual="arc" aria-pressed="false">弧线图</button>
+                <button type="button" data-visual="matrix" aria-pressed="false">矩阵</button>
+              </div>
+              <svg id="structure-svg" viewBox="0 0 470 300" role="img" aria-label="可交互的 RNA 结构图"></svg>
+              <div class="visual-legend"><span><i class="swatch core"></i>主干配对</span><span id="pk-legend" hidden><i class="swatch extra"></i>交叉配对 8–15</span></div>
+              <div id="position-detail" class="position-detail" aria-live="polite"></div>
+            </div>
+            <div class="code-panel">
+              <div class="code-heading"><span id="example-label"></span><button type="button" id="copy-example" title="复制当前示例">复制 <span>⧉</span></button></div>
+              <div id="example-code" class="example-code" aria-label="当前格式的示例"></div>
+              <div id="format-warning" class="format-warning" hidden></div>
+              <div id="code-key" class="code-key"></div>
+            </div>
+          </div>
+          <div class="format-explanation">
+            <div class="explanation-lead"><p class="eyebrow">定义与用途</p><p id="format-what"></p><p id="format-why"></p></div>
+            <div class="explanation-use"><p class="eyebrow">研究应用</p><div id="format-suited" class="use-tags"></div><div class="keep-lose"><p><span class="keep-dot">＋</span><span id="format-keeps"></span></p><p><span class="lose-dot">−</span><span id="format-loses"></span></p></div></div>
+          </div>
+          <div class="detail-foot"><p><span class="info-icon">i</span><span id="format-caution"></span></p><a id="format-source" target="_blank" rel="noopener noreferrer">原始说明 ↗</a></div>
+        </div>
+        <div id="comparison-panel" class="comparison-panel" hidden>
+          <h3>信息表达能力</h3>
+          <p class="comparison-description">实际读写支持取决于软件实现。</p>
+          <div class="comparison-scroll"><table id="comparison-table"></table></div>
+          <div class="comparison-legend"><span><i class="cap yes">●</i>可直接表达</span><span><i class="cap partial">◐</i>依赖附加注释、实现或推导</span><span><i class="cap no">—</i>基础表示不提供</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="research" class="page-width research-section" aria-labelledby="research-title">
+      <h2 id="research-title" class="visually-hidden">研究应用</h2>
+      <div id="study-options" class="study-options" role="group" aria-label="研究用途"></div>
+      <div class="study-result" aria-live="polite"><div><h3 id="study-title"></h3><p id="study-description"></p></div><div id="study-recommendations"></div></div>
+      <div class="conversion-lab" aria-label="表示能力比较">
+        <div class="conversion-main">
+          <div class="conversion-selectors"><label>来源表示<select id="conversion-from" aria-label="来源表示"></select></label><span class="conversion-arrow">→</span><label>目标表示<select id="conversion-to" aria-label="目标表示"></select></label></div>
+          <div id="conversion-features" class="conversion-features"></div>
+          <p id="conversion-message" class="conversion-message" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="reading-notes">
+        <article><span class="note-number">01</span><h3>符号约定</h3><p>扩展 DBN 与 WUSS 的符号含义不同。WUSS 中的方括号不一定表示伪结。</p><button type="button" data-open-format="wuss">WUSS <span>↗</span></button></article>
+        <article><span class="note-number">02</span><h3>伪结移除</h3><p>移除伪结需选定保留的配对集合，不能仅将方括号替换为圆括号。</p><button type="button" data-open-format="extended">扩展 DBN <span>↗</span></button></article>
+        <article><span class="note-number">03</span><h3>结构一致性核验</h3><p>应比较序列编号与配对伙伴；括号分层和绘图布局的差异不一定代表结构差异。</p><button type="button" data-open-format="bpseq">BPSEQ <span>↗</span></button></article>
+      </div>
+    </section>
+    <section id="references" class="references-section" aria-labelledby="references-title">
+      <div class="page-width">
+        <div class="section-heading"><h2 id="references-title">参考文献</h2></div>
+        <div id="paper-list" class="paper-list"></div>
+        <div class="documentation-sources"><h3>格式文档</h3><div id="documentation-links"></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="page-width site-footer"><span class="footer-brand">RNA / 结构格式参考</span><span>更新：2026-10-27</span></footer>
+  <dialog id="figure-dialog">
+    <div class="dialog-bar"><span id="dialog-title"></span><button type="button" id="close-dialog" aria-label="关闭文内图">×</button></div>
+    <div class="dialog-image-wrap"><img id="dialog-image" alt=""></div>
+    <p id="dialog-caption"></p><div class="dialog-foot"><span id="dialog-credit"></span><a id="dialog-doi" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+  </dialog>
+  <div id="copy-status" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript-note">请启用 JavaScript 以使用交互示例；文献元数据同时保存在资料包中。</p></noscript>
+</body>
+</html>
