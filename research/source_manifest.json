@@ -61,7 +61,8 @@
       "local_thumbnail": "assets/literature/antczak.webp",
       "thumbnail_bytes": 77660,
       "thumbnail_sha256": "1f7477c108326be46722d79eea0217ca8b3ec5191ce23b1c50e01d8e80c423da",
-      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+      "image_modification": "Proportional reduction where needed and WebP encoding only; no cropping or content changes.",
+      "article_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5905660/"
     },
     {
       "id": "bprna",
@@ -81,7 +82,8 @@
       "local_thumbnail": "assets/literature/bprna.webp",
       "thumbnail_bytes": 58092,
       "thumbnail_sha256": "8dbbdac880c4e264607a6625180a9a614fe69c998cfeebdd419a91b63f8b328a",
-      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+      "image_modification": "Proportional reduction where needed and WebP encoding only; no cropping or content changes.",
+      "article_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6009582/"
     },
     {
       "id": "tarnas",
@@ -101,7 +103,8 @@
       "local_thumbnail": "assets/literature/tarnas.webp",
       "thumbnail_bytes": 11748,
       "thumbnail_sha256": "8d0fb0c9d9ba8579a34f998b0ae50b1abfc5f4a347e448620426720d16d9396d",
-      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+      "image_modification": "Proportional reduction where needed and WebP encoding only; no cropping or content changes.",
+      "article_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12193548/"
     },
     {
       "id": "vienna",
@@ -121,7 +124,8 @@
       "local_thumbnail": "assets/literature/vienna.webp",
       "thumbnail_bytes": 88322,
       "thumbnail_sha256": "c3d4bbeda6356368b8d8c0bb00f3a99dbfc154dc5d69d180687fd0c8c813f4da",
-      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+      "image_modification": "Proportional reduction where needed and WebP encoding only; no cropping or content changes.",
+      "article_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3319429/"
     },
     {
       "id": "dssr",
@@ -141,7 +145,50 @@
       "local_thumbnail": "assets/literature/dssr.webp",
       "thumbnail_bytes": 72004,
       "thumbnail_sha256": "b331bf1312174ffa5703b21dd4995c3044defefda45b73a1ead4eaa7ffc54f19",
-      "image_modification": "Proportional reduction and WebP encoding only; figure content unchanged."
+      "image_modification": "Proportional reduction where needed and WebP encoding only; no cropping or content changes.",
+      "article_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4666379/"
+    },
+    {
+      "id": "bprna-align",
+      "year": "2023",
+      "authors": "Lasher & Hendrix",
+      "title": "bpRNA-align: improved RNA secondary structure global alignment for comparing and clustering RNA structures",
+      "journal": "RNA · 29:584–595",
+      "doi": "10.1261/rna.079211.122",
+      "image": "bprna-align.webp",
+      "figure": "Fig. 1",
+      "takeaway": "基于 bpRNA 结构类型数组的全局比对，用于结构相似性比较与聚类。",
+      "caption": "bpRNA-align 的结构表示、替换评分及缺口处理方法。",
+      "license": "CC BY-NC 4.0",
+      "pmc": "PMC10159002",
+      "sourceImage": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b70c/10159002/fc054e4ce3d0/584f01.jpg",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "article_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10159002/",
+      "local_thumbnail": "assets/literature/bprna-align.webp",
+      "thumbnail_bytes": 81998,
+      "thumbnail_sha256": "36d5865c3698952960fc0c21ccb70943e34e361dcadfc0c2a84b6f3d39656277",
+      "image_modification": "Proportional reduction where needed and WebP encoding only; no cropping or content changes."
+    },
+    {
+      "id": "bprna-cosmos",
+      "year": "2025",
+      "authors": "Lasher & Hendrix",
+      "title": "bpRNA-CosMoS: a robust and efficient RNA structural comparison method using k-mer based cosine similarity",
+      "journal": "Bioinformatics · 41:btaf108",
+      "doi": "10.1093/bioinformatics/btaf108",
+      "image": "bprna-cosmos.webp",
+      "figure": "Fig. 1",
+      "takeaway": "以结构类型数组的 k-mer 计数与长度加权余弦相似度，进行大规模结构比较。",
+      "caption": "bpRNA-CosMoS 的结构比较示例及计算流程。",
+      "license": "CC BY 4.0",
+      "pmc": "PMC12017588",
+      "sourceImage": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/dc03/12017588/a4a3ceb8945f/btaf108f1.jpg",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "article_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12017588/",
+      "local_thumbnail": "assets/literature/bprna-cosmos.webp",
+      "thumbnail_bytes": 99768,
+      "thumbnail_sha256": "750cdd706aa4f36101ac40a67eb785182dd5d508af893789eaec90475c1c9a0a",
+      "image_modification": "Proportional reduction where needed and WebP encoding only; no cropping or content changes."
     }
   ],
   "documentation": {
@@ -212,5 +259,52 @@
     }
   ],
   "paper_full_text_in_site": false,
-  "paper_pdf_in_site": false
+  "paper_pdf_in_site": false,
+  "paper_groups": [
+    {
+      "id": "tarnas",
+      "date": "2025-06",
+      "year": "2025",
+      "papers": [
+        "tarnas"
+      ]
+    },
+    {
+      "id": "bprna-series",
+      "date": "2025-03",
+      "year": "2018–2025",
+      "title": "bpRNA 系列",
+      "papers": [
+        "bprna-cosmos",
+        "bprna-align",
+        "bprna"
+      ]
+    },
+    {
+      "id": "antczak",
+      "date": "2018-04",
+      "year": "2018",
+      "papers": [
+        "antczak"
+      ]
+    },
+    {
+      "id": "dssr",
+      "date": "2015-09",
+      "year": "2015",
+      "papers": [
+        "dssr"
+      ]
+    },
+    {
+      "id": "vienna",
+      "date": "2011-11",
+      "year": "2011",
+      "papers": [
+        "vienna"
+      ]
+    }
+  ],
+  "interface_language": "zh-CN",
+  "bibliography_order": "Newest first; related bpRNA papers share one group and are ordered newest first within it."
 }

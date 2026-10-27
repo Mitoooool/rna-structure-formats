@@ -135,7 +135,7 @@
   }
 
   function nodeMarkup(i,x,y,small=false) {
-    return `<g class="svg-node" data-position="${i}" role="button" tabindex="0" aria-label="位置 ${i}，${A.sequence[i-1]}，伙伴 ${partners()[i-1]||"未配对"}"><circle class="svg-base-circle" cx="${x}" cy="${y}" r="${small?6.7:12}"/><text class="svg-base-text" style="font-size:${small?11:12}px" x="${x}" y="${y}">${A.sequence[i-1]}</text></g>`;
+    return `<g class="svg-node" data-position="${i}" role="button" tabindex="0" aria-label="位置 ${i}，${A.sequence[i-1]}，伙伴 ${partners()[i-1]||"未配对"}"><circle class="svg-base-circle" cx="${x}" cy="${y}" r="${small?6.7:12}"/><text class="svg-base-text" style="font-size:${small?11:14}px" x="${x}" y="${y}">${A.sequence[i-1]}</text></g>`;
   }
 
   function renderVisual() {
@@ -273,10 +273,14 @@
   }
 
   function renderPapers() {
-    $("paper-list").innerHTML=A.papers.map(p=>`<article class="paper-card" id="paper-${p.id}">
-      <button type="button" class="paper-figure" data-figure="${p.id}" aria-label="查看 ${esc(p.authors)} ${p.year} 的 ${p.figure}"><img src="assets/literature/${p.image}" alt="${esc(p.caption)}" width="600" height="450"><span class="figure-corner">${p.figure}</span><span class="figure-expand" aria-hidden="true">⤢</span></button>
-      <div class="paper-content"><div class="paper-meta"><span>${esc(p.authors)}</span><span>${p.year}</span></div><h3>${esc(p.title)}</h3><p class="paper-journal">${esc(p.journal)}</p><p class="paper-takeaway">${esc(p.takeaway)}</p><div class="paper-bottom"><a href="https://doi.org/${p.doi}" target="_blank" rel="noopener noreferrer" aria-label="${esc(p.title)} 的 DOI">DOI ↗</a><span>${p.figure} · <a href="${licenseUrl(p.license)}" target="_blank" rel="noopener noreferrer" aria-label="${p.license} 图片许可">${p.license}</a></span></div></div>
-    </article>`).join("");
+    const row = (p, grouped) => `<article class="paper-card" id="paper-${p.id}" data-year="${p.year}" aria-labelledby="paper-title-${p.id}">
+      <div class="paper-visual"><span class="paper-year">${p.year}</span><button type="button" class="paper-figure" data-figure="${p.id}" aria-label="放大 ${esc(p.authors)} ${p.year} 的 ${p.figure.replace("Fig.","图")}"><img src="assets/literature/${p.image}" alt="${esc(p.caption)}" width="600" height="450"><span class="figure-corner">${p.figure.replace("Fig.","图")}</span><span class="figure-expand" aria-hidden="true">⤢</span></button></div>
+      <div class="paper-content"><p class="paper-meta">${esc(p.authors)}</p><${grouped?"h4":"h3"} id="paper-title-${p.id}" class="paper-title" lang="en">${esc(p.title)}</${grouped?"h4":"h3"}><p class="paper-journal">${esc(p.journal)}</p><p class="paper-takeaway">${esc(p.takeaway)}</p><div class="paper-bottom"><a href="https://doi.org/${p.doi}" target="_blank" rel="noopener noreferrer" aria-label="${esc(p.title)} 的 DOI">DOI ↗</a><span>${p.figure.replace("Fig.","图")} · <a href="${licenseUrl(p.license)}" target="_blank" rel="noopener noreferrer" aria-label="${p.license} 图片许可">${p.license}</a></span></div></div>
+    </article>`;
+    $("paper-list").innerHTML=[...A.paperGroups].sort((a,b)=>b.date.localeCompare(a.date)).map(group=>{
+      const papers=group.papers.map(id=>A.papers.find(p=>p.id===id)).sort((a,b)=>Number(b.year)-Number(a.year));
+      return `<section class="paper-group${group.title?" paper-series":""}" data-paper-group="${group.id}" data-date="${group.date}" aria-label="${esc(group.title||papers[0].title)}">${group.title?`<header class="paper-series-heading"><h3>${esc(group.title)}</h3><span>${group.year}</span></header>`:""}${papers.map(p=>row(p,Boolean(group.title))).join("")}</section>`;
+    }).join("");
     $("documentation-links").innerHTML=["rnastructure","vienna","stockholm","unafold","mmcif"].map(id=>{
       const s=A.sources[id];return `<a href="${s.url}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`;
     }).join("");
